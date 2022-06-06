@@ -1,0 +1,38 @@
+.Register-wrapper{
+   width: 100%;
+}
+.Register-wrapper .reg-btn{
+    width: auto;
+}
+.reg-btn .btn-gmail{
+    position: relative;
+    border-radius: 0;
+    padding: 0.5rem 5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+.Register-wrapper .reg-btn .btn-gmail::before{
+    background: url('../../assets/img/Gmail-icon.png') no-repeat 0;
+    content: "";
+    width: 40px;
+    height: 44px;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.reg-btn .btn-fb{
+    padding: 0.5rem 3.1rem;
+    border-radius: 0;
+}
+.reg-btn .btn-fb i{
+    margin-left: -2rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding-right: 2.1rem;
+}
+.Register-wrapper .register-form-wrapper button{
+    padding: 0.5rem 2rem;
+    border-radius: 0;
+}

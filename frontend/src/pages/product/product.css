@@ -1,0 +1,13 @@
+.btn-group{
+    margin-top: 1rem;
+}
+
+.btn-group .btn {
+    background: none;
+    color: black;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.btn-group .dropdown-menu{
+    height: 200px;
+}

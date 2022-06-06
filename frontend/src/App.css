@@ -1,0 +1,41 @@
+.lead-text{
+    text-align: center;
+    margin: 3rem 0 0;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+}
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000000;
+    background-clip: padding-box;
+    transition: opacity .5s ease;
+    border: 1px;
+    border-radius: 50px solid black;
+    border-radius: 30px;
+}
+.slider-wrapper .carousel-indicators{
+    top: 105%;
+}
+.red-box{
+    display: flex;
+    justify-content: center;
+
+}
+.red-box .box-1{
+    width: 28px;
+    height: 18px;
+    background-color: #e21e2d;
+    margin: 0 1rem;
+}
+.error{
+    color: #e21e2d;
+    font-size: 12px;
+}

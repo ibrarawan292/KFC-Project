@@ -1,0 +1,27 @@
+.menu-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.menu-wrapper .navbar{
+    width: 80%;
+}
+.menu-wrapper .delivery{
+    width: 20%;
+    text-align: right;
+    padding: 10px;
+}
+.delivery .delivery-cart{
+    text-decoration: none;
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+}
+.delivery-cart img{
+    width: 50px;
+}
+.delivery-cart .delivery-cart-length{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

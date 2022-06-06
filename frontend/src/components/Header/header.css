@@ -1,0 +1,20 @@
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.auth-link ul{
+    display: flex;
+    list-style: none;
+}
+.auth-link ul li{
+    margin: 0 8px;
+}
+.auth-link ul li a{
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+}

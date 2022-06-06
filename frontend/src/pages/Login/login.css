@@ -1,0 +1,97 @@
+.login-page-login{
+    border-right: 1px solid #f3f3f3!important;
+}
+.login-inner-wrapper{
+    margin-left: 15%;
+    /* text-align: right; */
+    padding: 3rem 3rem 0;
+    
+}
+.login-inner .login-page{
+    margin-bottom: 2rem;
+  
+}
+.login-page h3{
+    font-size: 1.5rem;
+    font-weight: 650;
+}
+.login-inner hr {
+    margin: 1.5rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+    width: 80%;
+    
+   
+}
+
+.login-inner .login-btn .btn-gmail::before{
+    background: url('../../assets/img/Gmail-icon.png') no-repeat 0;
+    content: "";
+    width: 40px;
+    height: 44px;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.login-inner .login-btn .btn-gmail{
+    position: relative;
+    border-radius: 0;
+    padding: 0.5rem 5rem;
+    margin-bottom: 1rem;
+}
+.login-btn .btn-fb{
+    padding: 0.5rem 3.1rem;
+    border-radius: 0;
+}
+.login-btn .btn-fb i{
+    margin-left: -2rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding-right: 2.1rem;
+}
+.login-form-wrapper{
+   margin-left: 15%;
+   /* text-align: right; */
+    padding: 1rem 3rem 3rem;
+}
+.login-form-wrapper h3{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.login-form-wrapper p{
+    font-size: .8rem;
+}
+.login-form-wrapper .login-form .form-control{
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 3rem;
+}
+.login-form p a{
+    text-decoration: none;
+    color: #e21e2d;
+}
+.login-form .sign-in-btn{
+    border-radius: 0;
+    padding: .5rem .8rem;
+}
+.login-inner .create-wrapper{
+    padding: 3rem;
+    
+}
+.create-wrapper h3{
+    font-size: 1.5rem;
+    font-weight: 650;
+}
+.create-wrapper p{
+    font-size: .8rem;
+}
+.create-wrapper button{
+    padding: .6rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 0;
+}
