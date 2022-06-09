@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/img/KFC-Logo.svg'
+import logo from '../../assets/img/KFC-Logo.png'
 import './header.css';
 import Menu from '../Menu';
 import {Link} from 'react-router-dom'
@@ -15,7 +15,7 @@ const Header = () => {
                     <div className="box-1"></div>
                 </div>
             <div className="header-wrapper">
-                <div className="logo">
+                <div className="logo " >
                     <Link to="/"><img src={logo} alt="" /></Link>
                 </div>
                 <div className="auth-link">

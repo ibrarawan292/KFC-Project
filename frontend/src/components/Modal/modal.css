@@ -1,0 +1,64 @@
+.bucket-modal-wrapper{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+}
+.bucket-modal-inner{
+    width: 350px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+.bucket-modal-head{
+    background-color: #2d2926;
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+.bucket-modal-body{
+    padding: 2rem 1rem;
+    /* text-align: center; */
+}
+.bucket-modal-body .body-title h3{
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 2rem;
+}
+
+.delivery-form .form-control, .form-select{
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #6e6868;
+    outline: none;
+    box-shadow: none;
+}
+/* .input .form-control{
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #6e6868;
+    outline: none;
+    box-shadow: none;
+} */
+.delivery-form .btn-bucket{
+    border: 0;
+    border-radius: 0;
+}
+.bucket-summary{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+.grand-total{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+}

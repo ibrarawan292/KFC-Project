@@ -5,6 +5,9 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
+.header-wrapper .logo img{
+    width: 200px;
+}
 .auth-link ul{
     display: flex;
     list-style: none;
