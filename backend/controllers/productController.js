@@ -4,10 +4,11 @@ exports.createProduct= async (req, res, next) =>{
 
     const body = req.body;
     try {
-        await Product.create(body);
+        const product = await Product.create(body);
         res.json({
             status: true,
             message: 'success',
+            product
         })
     } catch (error) {
         next(error)

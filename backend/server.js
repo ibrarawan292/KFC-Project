@@ -3,10 +3,11 @@ const app = express()
 require('dotenv').config();
 const products = require('./routes/products')
 const bodyParser = require('body-parser')
-const {connectDatabase} = require('./config/config')
+const {connectDatabase} = require('./config/config');
+const cors = require('cors')
 
 connectDatabase();
-
+app.use(cors());
 app.use(bodyParser())
 
 

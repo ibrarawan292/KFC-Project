@@ -1,21 +1,33 @@
 import './App.css';
 import Header from './components/Header';
-import Nav from './components/Nav';
-import Main from './components/Main'
+import Home from './pages/Home';
 import Login from './pages/Login';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Product from './pages/Product';
+import Order from './pages/Order';
 
 function App() {
   return (
-    <div className="App">
-     {/* <Header/>
-     <div className="container-fluid">
-       <div className="row">
-         <Nav/>
-         <Main/>
-       </div>
-     </div> */}
-     <Login/>
+  
+    <BrowserRouter>
+    <Header/>
+    <div className="container-fluid">
+      <div className="row">
+      <Routes>
+      <Route path="/" element={<Login />}/>
+      <Route path="/home" element={<Home />}/>
+      <Route path="/products" element={<Product/>}/>
+      <Route path="/orders" element={<Order/>}/>
+    </Routes>
+      </div>
     </div>
+    
+  </BrowserRouter>
+    
   );
 }
 

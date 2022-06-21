@@ -1,27 +1,38 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { getAllProducts } from '../../redux/actions/productAction';
 
 const Nav = () => {
+
+
+  const dispatch = useDispatch();
+
+  useEffect(() => { 
+    dispatch(getAllProducts())
+  }, [])
+  
   return (
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <Link class="nav-link active" aria-current="page" to='/home'>
               <span data-feather="home"></span>
               Dashboard
-            </a>
+            </Link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <Link class="nav-link" to="/orders">
               <span data-feather="file"></span>
               Orders
-            </a>
+            </Link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <Link class="nav-link"  onClick={() => dispatch(getAllProducts())} to='/products'>
               <span data-feather="shopping-cart"></span>
               Products
-            </a>
+            </Link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
