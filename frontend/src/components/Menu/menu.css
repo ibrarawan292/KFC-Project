@@ -5,6 +5,12 @@
 .menu-wrapper .navbar{
     width: 80%;
 }
+.navbar .nav-item .nav-link{
+    color: #000000;
+    font-size: bold;
+    font-weight: 600;
+    text-transform: uppercase;
+}
 .menu-wrapper .delivery{
     width: 20%;
     text-align: right;

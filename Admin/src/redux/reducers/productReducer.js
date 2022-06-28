@@ -6,11 +6,20 @@ export const productReducer = (state={products:[]}, action) =>{
             return{
                 products: action.payload 
             }
-        case 'ADD_PRODUCTS':
+        case 'ADD_PRODUCT':
             return{
-                ...state.products,
+                products: action.payload
+            }
+        case 'DELETE_PRODUCT':
+            return{
+                products: action.payload
+            }
+        case 'UPDATE_PRODUCT':
+            return{
+                ...state.products.id,
                 message: action.payload
             }
+           
         default:
             return state
     }

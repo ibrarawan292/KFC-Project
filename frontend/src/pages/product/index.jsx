@@ -3,9 +3,12 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Card from '../../components/Card'
 import './product.css';
+import { useParams } from 'react-router-dom';
 
 
 const Product = () => {
+
+    const {title} = useParams()
     return (
 
         <div className="product-wrapper">
@@ -13,7 +16,7 @@ const Product = () => {
 
             <div className="product-inner ">
                 <div className="lead-text">
-                    <h3>SIGNATURE BOXES</h3>
+                    <h3>{title}</h3>
                 </div>
 
                 <div className="btn-group">

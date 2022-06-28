@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import Product from './pages/Product';
 import Order from './pages/Order';
+import EditModal from './pages/Product/editModal';
+
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Route path="/home" element={<Home />}/>
       <Route path="/products" element={<Product/>}/>
       <Route path="/orders" element={<Order/>}/>
+      <Route path="/edit/:id" element={<EditModal/>}/>
+     
     </Routes>
       </div>
     </div>

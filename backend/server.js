@@ -5,12 +5,19 @@ const products = require('./routes/products')
 const bodyParser = require('body-parser')
 const {connectDatabase} = require('./config/config');
 const cors = require('cors')
+const cloudinary = require('cloudinary').v2
 
 connectDatabase();
 app.use(cors());
-app.use(bodyParser())
+app.use(express.urlencoded({extended: true}))
+app.use(bodyParser({limit: '50mb'}))
 
 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+})
 
 
 app.use('/api/v1', products)
