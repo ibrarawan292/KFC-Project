@@ -1,22 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Card from '../../components/Card'
 import './product.css';
 import { useParams } from 'react-router-dom';
-
+import {useDispatch, useSelector} from 'react-redux'
+import { getAllProducts } from '../../redux/actions/productAction';
 
 const Product = () => {
 
-    const {title} = useParams()
+    const dispatch = useDispatch();
+    const {products} = useSelector((state) => state.products);
+    console.log(products)
+    useEffect(()=>{
+      dispatch(getAllProducts())
+    }, [])
+  
+
+    const {slug} = useParams()
+
     return (
 
         <div className="product-wrapper">
+           
             <Header />
 
             <div className="product-inner ">
                 <div className="lead-text">
-                    <h3>{title}</h3>
+                    <h3>{slug.toUpperCase().replace(/[^a-z]/gi, ' ')}</h3>
                 </div>
 
                 <div className="btn-group">
@@ -35,25 +46,10 @@ const Product = () => {
                     </ul>
                 </div>
                 <div className="row">
-                    <div className="col-md-4">
-                        <Card />
-                    </div>
-                    <div className="col-md-4">
-                        <Card />
-                    </div>
-                    <div className="col-md-4">
-                        <Card />
-                    </div>
-                    <div className="col-md-4">
-                        <Card />
-                    </div>
-                    <div className="col-md-4">
-                        <Card />
-                    </div>
-                    <div className="col-md-4">
-                        <Card />
-                    </div>
-                </div>
+            {
+              products && products.map(product=><Card product={product}/>)
+            }
+        </div>
             </div>
             <Footer />
 

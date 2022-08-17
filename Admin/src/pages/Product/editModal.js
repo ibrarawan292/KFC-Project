@@ -6,24 +6,27 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
-import { updateProduct } from '../../redux/actions/productAction'
+import { getSingelProduct } from '../../redux/actions/productAction'
 
 const EditModal = () => {
 
     const {id} = useParams()
+    
+    const product = useSelector((state) => state.products.products)
+    console.log(product)
+    const dispatch = useDispatch()
 
     useEffect(() => { 
-      dispatch(updateProduct(id))
+      dispatch(getSingelProduct(id))
     }, [])
     
-    const dispatch = useDispatch()
+    
  
     const { handleChange, handleBlur, handleSubmit, touched, errors, values, setFieldValue} = useFormik({
       initialValues: {
         title: '',
         description: '',
         price:'',
-        stock:'',
         productImage:''
       },
       validationSchema: Yup.object({
@@ -32,8 +35,7 @@ const EditModal = () => {
           .required('description is required'),
           price:Yup.string()
           .required('please enter a price'),
-          stock:Yup.string()
-          .required('please enter a stock'),
+        
      
       }),
       onSubmit: (values) => {
@@ -56,9 +58,6 @@ const EditModal = () => {
 
             <input type="number" onChange={handleChange} onBlur={handleBlur} value={values.price} name='price' className="form-control" placeholder='price' id="price" min="0.00" max="10000.00" step="0.01" />
             <p className='error'>{touched.price && errors.price ? errors.price : null}</p>
-
-            <input type="number" onChange={handleChange} onBlur={handleBlur} value={values.stock} name='stock' className="form-control" placeholder='stock' id="stock" min="0.00" max="10000.00" step="0.01" />
-            <p className='error'>{touched.stock && errors.stock ? errors.stock : null}</p>
 
             <input type="file" 
             onChange={(event) =>{

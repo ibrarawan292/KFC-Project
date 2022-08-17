@@ -14,12 +14,12 @@ export const productReducer = (state={products:[]}, action) =>{
             return{
                 products: action.payload
             }
-        case 'UPDATE_PRODUCT':
+        case 'SINGLE_PRODUCT':
             return{
-                ...state.products.id,
-                message: action.payload
+                ...state.products._id,
+                products: action.payload
             }
-           
+               
         default:
             return state
     }

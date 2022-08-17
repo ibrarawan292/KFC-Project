@@ -1,14 +1,26 @@
 import React, { useState } from 'react'
 import cartIcon from '../../assets/img/cart-icon.png'
 import Modal from '../Modal';
-import {Link} from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 import './menu.css';
+import { useEffect } from 'react'
+import axios from 'axios';
+
 const Menu = () => {
+
+
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    const response = axios.get(`http://localhost:9000/api/v1/product/all/category`)
+    .then((res) => setCategories(res.data.data))
+    
+  }, [])
+
 
   const [isModelopen, setisModalopen] = useState(false)
 
-  const openModal = (e) =>{
+  const openModal = (e) => {
     e.preventDefault();
     setisModalopen(true)
   }
@@ -26,37 +38,33 @@ const Menu = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link " aria-current="page" to={`/collection/everyday-value`}>Everyday Value</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/ala-carte-and-combos/">Ala Carte & Combos</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/signature-boxes">Signature Boxes</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/sharing">Sharing</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/snacks">Snacks</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/midnight-deals">MIDNIGHT DEALS</Link>
-                </li>
-               
+
+                {
+                  categories && categories.map((category) => {
+                
+                    return (
+                      <>
+                        <li className="nav-item">
+                          <Link className="nav-link " aria-current="page" to={`/collection/${category.slug}`}>{category.categories}</Link>
+                        </li>
+
+                      </>
+                    )
+                  })
+                }
+
               </ul>
             </div>
           </div>
         </nav>
         <div className="delivery bg-light">
           <a href="" className='delivery-cart'>
-            <img src={cartIcon} alt=""  onClick={openModal}/>
-            <span className='delivery-cart-length'  onClick={openModal}>0</span>
+            <img src={cartIcon} alt="" onClick={openModal} />
+            <span className='delivery-cart-length' onClick={openModal}>0</span>
           </a>
         </div>
       </div>
-     {isModelopen ? <Modal closeModal={closeModal}/> : null } 
+      {isModelopen ? <Modal closeModal={closeModal} /> : null}
     </>
   )
 }

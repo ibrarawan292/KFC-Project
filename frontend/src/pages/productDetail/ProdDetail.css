@@ -63,6 +63,9 @@
     
     padding: 0;
 }
+.count-bucket-btn p{
+    font-size: 0.8rem;
+}
 .bucket-btn .btn{
    padding: .5rem 5rem;
    border-radius: 0;

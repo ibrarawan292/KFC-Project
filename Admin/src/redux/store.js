@@ -2,13 +2,15 @@ import {combineReducers, createStore, applyMiddleware} from 'redux'
 import { productReducer } from './reducers/productReducer'
 import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import { categoryReducer } from './reducers/categoryReducer'
 
 
 const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware))
 
 
 const rootReducer = combineReducers({
-    products: productReducer
+    products: productReducer,
+    categories: categoryReducer
 })
 
 
